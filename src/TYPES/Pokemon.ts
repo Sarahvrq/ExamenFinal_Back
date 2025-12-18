@@ -5,8 +5,8 @@ export type Pokemon = {
   _id: ObjectId;
   name: string;
   description: string;
-  height: Number;
-  weight: Number;
+  height: number;
+  weight: number;
   types: [Enumerator]
   
 };

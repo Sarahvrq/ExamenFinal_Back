@@ -1,15 +1,14 @@
 import { getDB } from "../DB/mongo"
 import bcrypt from "bcryptjs" //importante para encriptar (y no desenctriptar)
-import { TRAINER_COLLECTION } from "../utils";
+import { OWNEDPOKEMONS_COLLECTION, TRAINER_COLLECTION } from "../utils";
 //import { getYPorID } from "./Y"; //para usar funciones de otra coleccion
 import { ObjectId } from "mongodb";
 
 
-        export const VerifNameDB = async (name: string) => {
+    export const VerifNameDB = async (name: string) => {
         const db = getDB();
         const result = await db.collection(TRAINER_COLLECTION).findOne({ name });
         if (result)throw new Error("ERROR: Nombre ya existe");
-
         return name;
         };
 
@@ -33,4 +32,12 @@ export const validateTRAINER = async (name: string, password: string) => {
     if(!checkPassword) throw new Error ("ERROR: Contraseña incorrecta");
 
     return user;
+};
+
+export const TrainersOwnedPokemonsArray = async (ids: ObjectId[]) => {
+    const db = getDB();
+    if(!ids || ids.length === 0) return [];
+    const idsOwnedPokemons = ids.map(x => new ObjectId(x));
+
+    return await db.collection(OWNEDPOKEMONS_COLLECTION).find({_id: {$in: idsOwnedPokemons}}).toArray();
 };

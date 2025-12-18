@@ -18,7 +18,7 @@ const start = async () => {
     },
   });
 
-  await server.listen({ port: 4003 }); //puerto
+  await server.listen({ port: 4004 }); //puerto
   console.log("GQL corriendo desde puerto 4003");
 };
 

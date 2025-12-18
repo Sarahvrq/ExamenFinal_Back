@@ -1,13 +1,14 @@
 import { ObjectId } from "mongodb"
 
-export type Tasks = {
+export type OwnedPokemon = {
 
-    _id: ObjectId
-    title: String, 
-    projectId: ObjectId,
-    assignedTo: ObjectId,
-    status: String,
-    priority: String,
-    dueDate: Date
+    _id: ObjectId;
+    pokemon: ObjectId;
+    nickname: string;
+    attack: Number;
+    defense: Number;
+    speed: Number;
+    special: Number;
+    level: Number;
     
 };

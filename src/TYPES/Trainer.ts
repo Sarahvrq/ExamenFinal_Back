@@ -1,11 +1,9 @@
 import { ObjectId } from "mongodb"
 
-export type Users = {
+export type Trainer = {
 
-  _id: ObjectId
-  username: String,
-  email: String,
-  password: String,
-  createdAt: Date
-  
+  _id: ObjectId;
+  name: string;
+  pokemons: ObjectId[];
+
 };

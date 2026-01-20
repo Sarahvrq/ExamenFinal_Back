@@ -1,6 +1,7 @@
-# ExamenFinal_Back
+# POKEDB
 
-Backend REST API for the Examen Final project, POKEMON GAME.
+Backend REST API project, POKEMON GAME.
+-In progress
 
 ## What it does
 - Provides user authentication (JWT), Pokemon operations, and CRUD endpoints for the project's core entities.

@@ -20,7 +20,7 @@ Backend REST API project, POKEMON GAME.
 - Logging / Errors: winston or pino; Sentry optional
 
 ## Quick commands
-- Install: npm ci
+- Install: npm install
 - Dev: npm run dev
 - Test: npm test
 - Build: npm run build
